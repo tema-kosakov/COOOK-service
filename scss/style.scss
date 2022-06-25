@@ -4,20 +4,55 @@
 @import "libs";
 @import "global";
 
+// КНОПКИ
+
+.neumorp-btn {
+    cursor: pointer;
+    border: none;
+    @extend %box-shadow;
+
+    transition: all 0.1s ease-in-out;
+}
+
+.neumorp-btn--active,
+.neumorp-btn:active {
+    cursor: pointer;
+    border: none;
+    @extend %box-shadow--active;
+}
+
+.btn-second {
+    background: $second;
+    transition: all 0.1s ease-in-out;
+}
+
+.btn-second:hover {
+    background: #21cf4c;
+}
+
+.btn-second:active {
+    background: #1f993e;
+}
+
+// HEADER
+
 .header {
     margin-top: 40px;
     display: flex;
     justify-content: space-between;
+    position: relative;
 
     &__logo {
+        width: 140px;
+        height: 40px;
     }
     &__info {
         display: flex;
     }
     &__whatsapp-btn {
-        background: #25d366;
         border-radius: 30px;
         width: 180px;
+        height: 40px;
         font-weight: 700;
         font-size: 18px;
         line-height: 40px;
@@ -43,12 +78,12 @@
     }
 
     &__order {
+        height: 40px;
+        width: 280px;
         margin-left: 20px;
         font-weight: 700;
         font-size: 18px;
         line-height: 40px;
-        border: none;
-        @extend %box-shadow;
         border-radius: 30px;
         padding: 0 30px;
     }
@@ -57,15 +92,107 @@
         margin-left: 20px;
         width: 40px;
         height: 40px;
-        border: none;
         border-radius: 50%;
-        @extend %box-shadow;
     }
 
     &__user-icon {
         margin: auto;
     }
 }
+
+// USER-MENU
+
+.user-menu {
+    position: absolute;
+    z-index: 10;
+    width: 400px;
+    // height: 530px;
+    background-color: $body;
+    top: 60px;
+    right: 0;
+    font-size: 16px;
+    padding: 0 20px;
+
+    box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.05), 60px 60px 80px rgba(0, 0, 0, 0.35);
+    border-radius: 40px 40px 40px 5px;
+    &__btn {
+        position: absolute;
+        top: 23px;
+        right: 20px;
+
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
+    }
+
+    &__btn-icon {
+    }
+
+    &__list {
+        margin-top: 70px;
+        margin-bottom: 20px;
+    }
+
+    &__item {
+        position: relative;
+        padding: 20px 0;
+        border-top: 0.5px solid #fff;
+    }
+    &__item:last-child {
+        border-bottom: 0.5px solid #fff;
+    }
+
+    &__item-icon {
+        vertical-align: bottom;
+        margin-left: 20px;
+        margin-right: 24px;
+        width: 20px;
+        height: 20px;
+        fill: $default;
+        transition-duration: 0.2s;
+    }
+
+    &__item-link {
+        color: $default;
+        transition-duration: 0.2s;
+    }
+
+    &__item-link:hover {
+        color: $second;
+        .user-menu__item-icon {
+            fill: $second;
+        }
+    }
+
+    &__item-link--deposit {
+        color: #fe9102;
+
+        position: absolute;
+        bottom: 0;
+        right: 0;
+    }
+
+    &__item-link--deposit:hover {
+        color: #fe6702;
+    }
+
+    &__wtahsapp {
+        display: block;
+        margin: 0 auto 20px auto;
+        border: none;
+        border-radius: 99px;
+        height: 40px;
+        font-weight: 700;
+        font-size: 18px;
+        color: #ffffff;
+        width: 100%;
+    }
+}
+
+.user-menu--close {
+    display: none;
+}
+// FOOTER
 
 .footer {
     display: flex;
@@ -80,16 +207,18 @@
 
     &__list-item {
         margin-top: 40px;
-        color: #212629;
+
         position: relative;
     }
 
-    &__list-item:hover {
+    &__item-link {
+        color: $default;
+        transition-duration: 0.2s;
+    }
+    &__item-link:hover {
+        color: $second;
         .footer__item-icon {
-            fill: #25d366;
-        }
-        .footer__item-link {
-            color: #25d366;
+            fill: $second;
         }
     }
 
@@ -104,7 +233,8 @@
     }
 
     &__item-icon {
-        fill: #212629;
+        fill: $default;
         margin-right: 22px;
+        transition-duration: 0.2s;
     }
 }
