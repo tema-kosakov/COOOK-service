@@ -1,0 +1,110 @@
+@import "vars";
+@import "fonts";
+@import "reset";
+@import "libs";
+@import "global";
+
+.header {
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+
+    &__logo {
+    }
+    &__info {
+        display: flex;
+    }
+    &__whatsapp-btn {
+        background: #25d366;
+        border-radius: 30px;
+        width: 180px;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 40px;
+        padding: 0 30px;
+        color: #ffffff;
+        border: none;
+        padding: 0 px 30px;
+        cursor: pointer;
+        text-align: center;
+        display: flex;
+        align-items: center;
+    }
+
+    &__whatsapp-icon {
+        display: inline-block;
+        margin-right: 10px;
+        align-items: center;
+        width: 20px;
+        height: 20px;
+    }
+
+    &__whatsapp-text {
+    }
+
+    &__order {
+        margin-left: 20px;
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 40px;
+        border: none;
+        @extend %box-shadow;
+        border-radius: 30px;
+        padding: 0 30px;
+    }
+
+    &__user {
+        margin-left: 20px;
+        width: 40px;
+        height: 40px;
+        border: none;
+        border-radius: 50%;
+        @extend %box-shadow;
+    }
+
+    &__user-icon {
+        margin: auto;
+    }
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 130px;
+    margin-bottom: 70px;
+
+    font-size: 18px;
+    &__list {
+        max-width: 370px;
+    }
+
+    &__list-item {
+        margin-top: 40px;
+        color: #212629;
+        position: relative;
+    }
+
+    &__list-item:hover {
+        .footer__item-icon {
+            fill: #25d366;
+        }
+        .footer__item-link {
+            color: #25d366;
+        }
+    }
+
+    &__list-item::before {
+        content: "";
+        position: absolute;
+        top: -20px;
+        left: 0;
+        width: 370px;
+        height: 1px;
+        background-color: rgba(22, 22, 22, 0.08);
+    }
+
+    &__item-icon {
+        fill: #212629;
+        margin-right: 22px;
+    }
+}
