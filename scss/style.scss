@@ -6,7 +6,7 @@
 
 // КНОПКИ
 
-.neumorp-btn {
+.white-btn {
     cursor: pointer;
     border: none;
     @extend %box-shadow;
@@ -14,23 +14,23 @@
     transition: all 0.1s ease-in-out;
 }
 
-.neumorp-btn--active,
-.neumorp-btn:active {
+.white-btn--active,
+.white-btn:active {
     cursor: pointer;
     border: none;
     @extend %box-shadow--active;
 }
 
-.btn-second {
+.green-btn {
     background: $second;
     transition: all 0.1s ease-in-out;
 }
 
-.btn-second:hover {
+.green-btn:hover {
     background: #21cf4c;
 }
 
-.btn-second:active {
+.green-btn:active {
     background: #1f993e;
 }
 
@@ -51,7 +51,6 @@
     }
     &__whatsapp-btn {
         border-radius: 30px;
-        width: 180px;
         height: 40px;
         font-weight: 700;
         font-size: 18px;
@@ -79,7 +78,6 @@
 
     &__order {
         height: 40px;
-        width: 280px;
         margin-left: 20px;
         font-weight: 700;
         font-size: 18px;
@@ -112,6 +110,9 @@
     right: 0;
     font-size: 16px;
     padding: 0 20px;
+    visibility: visible;
+    opacity: 1;
+    transition: all 0.3s;
 
     box-shadow: 2px 2px 30px rgba(0, 0, 0, 0.05), 60px 60px 80px rgba(0, 0, 0, 0.35);
     border-radius: 40px 40px 40px 5px;
@@ -190,8 +191,10 @@
 }
 
 .user-menu--close {
-    display: none;
+    visibility: hidden;
+    opacity: 0;
 }
+
 // FOOTER
 
 .footer {
